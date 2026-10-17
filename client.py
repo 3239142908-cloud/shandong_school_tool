@@ -136,14 +136,18 @@ class ShanDongClient:
         return self.transport.post("/captcha/get", {"captchaType": "blockPuzzle"},
                                    add_common=False, webview=True)
 
-    def verify_slider_captcha(self, token: str, raw_x: float) -> Tuple[Dict[str, Any], str]:
+    def verify_slider_captcha(self, token: str, raw_x: float,
+                              raw_y: float = 15.0) -> Tuple[Dict[str, Any], str]:
         """8.7.7 校验滑块验证码。
 
         注意：/captcha/check 返回 code=0 但 data.result=false 时属于**校验失败**，
         上游只判断 code 会把失败当成通过（然后拿无效 captchaPoint 去登录，
         必然 401/1601）。这里把 result 也带出来，由调用方判断。
+
+        raw_y 不再是固定 15：不同图片缺口在垂直方向的位置不同，
+        固定值只在「缺口恰好在顶部」时成立。
         """
-        enc_point = crypto.encrypt_slider_point(raw_x)
+        enc_point = crypto.encrypt_slider_point(raw_x, raw_y)
         payload = {
             "captchaType": "blockPuzzle",
             "pointJson": enc_point,

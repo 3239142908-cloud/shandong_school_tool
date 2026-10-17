@@ -237,8 +237,8 @@ Sec-Fetch-Site: same-site
 ```cmd
 set "DIST=1000"          目标距离（米）
 set "PACE=480"           平均配速（秒/公里）
-set "LAT=<START_LAT>"       起跑纬度
-set "LNG=<START_LNG>"     起跑经度
+set "LAT=<你的纬度>"       起跑纬度
+set "LNG=<你的经度>"     起跑经度
 ```
 
 **命令行测试模式**（双击不会触发）：

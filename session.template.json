@@ -1,5 +1,5 @@
 {
-  "_note": "把下面四项换成你自己的值；token/satoken 从抓包请求头里取",
+  "_note": "填你自己的值。token/satoken 从抓包请求头取；expectedProvince/City 填你学校所在省市（如 省=XX 市=XX）",
   "token": "<AUTHORIZATION_JWT>",
   "satoken": "<SA_TOKEN_UUID>",
   "userId": "<USER_ID>",
@@ -7,10 +7,17 @@
   "userName": "<SCHOOL_NAME>",
   "deviceId": "<DEVICE_ID>",
   "modelName": "<BRAND|MODEL>",
-  "systemVersion": "<ANDROID_VERSION>",
+  "systemVersion": "12",
   "appVersion": "8.7.7",
   "buildVersion": "26101017",
   "appCode": "SD001",
   "platform": "2",
-  "screenScale": "3.00"
+  "screenScale": "3.00",
+  "expectedProvince": "<PROVINCE>",
+  "expectedCity": "<CITY>",
+  "requireMobileNetwork": false,
+  "_note_ip": "expectedLat/Lng 填学校操场坐标，工具会算「出口 IP 归属地到该点的距离」，超过 maxIpDistanceKm 即阻断；expectedLat/Lng 为 0 时退化为按省市判断；requireMobileNetwork=true 时固网 IP 阻断",
+  "expectedLat": 0.0,
+  "expectedLng": 0.0,
+  "maxIpDistanceKm": 50
 }
