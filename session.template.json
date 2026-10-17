@@ -1,0 +1,16 @@
+{
+  "_note": "把下面四项换成你自己的值；token/satoken 从抓包请求头里取",
+  "token": "<AUTHORIZATION_JWT>",
+  "satoken": "<SA_TOKEN_UUID>",
+  "userId": "<USER_ID>",
+  "schoolCode": "<SCHOOL_CODE>",
+  "userName": "<SCHOOL_NAME>",
+  "deviceId": "<DEVICE_ID>",
+  "modelName": "<BRAND|MODEL>",
+  "systemVersion": "<ANDROID_VERSION>",
+  "appVersion": "8.7.7",
+  "buildVersion": "26101017",
+  "appCode": "SD001",
+  "platform": "2",
+  "screenScale": "3.00"
+}
